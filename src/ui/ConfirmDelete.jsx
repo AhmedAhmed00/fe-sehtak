@@ -78,6 +78,7 @@ function ConfirmDelete({ resource, onConfirm, closeModal }) {
             No, keep it
           </Button>
           <Button
+            size="medium"
             variation="danger"
             onClick={() => {
               onConfirm();

@@ -11,7 +11,8 @@ const sizes = {
   `,
   medium: css`
     font-size: 1.4rem;
-    width: 104px;
+    min-width: 120px;
+    width: auto;
     padding: 0.8rem 1rem;
     font-weight: 500;
   `,
