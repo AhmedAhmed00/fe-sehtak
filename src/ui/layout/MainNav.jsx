@@ -43,7 +43,7 @@ function MainNav() {
       >
         <CiLogout fontWeight={"bold"} color="var(--color-red-800)" />
         <Heading as={"h4"} color="red">
-          تسجيل الخروج
+          Logout
         </Heading>
       </StyledNavLink>
     </nav>

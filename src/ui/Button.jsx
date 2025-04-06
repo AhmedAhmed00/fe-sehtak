@@ -20,7 +20,7 @@ const sizes = {
     height: 48px;
     width: auto;
     font-weight: 500;
-    padding: 0.8rem 1.4rem;
+    padding: 0.8rem 2.4rem;
     font-weight: 500;
   `,
 };

@@ -12,11 +12,8 @@ export default function GenericTable({
   pageSize,
   resaultsCount,
   isNotPaginated,
-  isLoading
+  isLoading,
 }) {
-
-
-
   return (
     <Table role="table">
       <TableHeader cols={headers.length} role="row">
@@ -25,10 +22,10 @@ export default function GenericTable({
         ))}
       </TableHeader>
 
-   {data?.length === 0 && <Empty/>}
+      {data?.length === 0 && <Empty />}
 
-      {isLoading ? <Spinner />  :    data?.map(renderRow)    }
-  
+      {isLoading ? <Spinner /> : data?.map(renderRow)}
+
       {isNotPaginated ? (
         ""
       ) : (

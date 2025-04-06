@@ -70,12 +70,12 @@ function ConfirmDelete({ resource, onConfirm, closeModal }) {
         isClosing={isClosing}
         onClick={(e) => e.stopPropagation()}
       >
-        <Heading as="h2">حذف عنصر</Heading>
-        <p>هل انت متأكد من أنك تريد الحذف؟</p>
+        <Heading as="h2">Delete Record</Heading>
+        <p>Are you sure you need to delete the record ?</p>
 
         <div>
           <Button variation="secondary" onClick={handleClose}>
-            إلغاء
+            No, keep it
           </Button>
           <Button
             variation="danger"
@@ -84,7 +84,7 @@ function ConfirmDelete({ resource, onConfirm, closeModal }) {
               handleClose();
             }}
           >
-            حذف
+            Yes, Delete it
           </Button>
         </div>
       </StyledConfirmDelete>

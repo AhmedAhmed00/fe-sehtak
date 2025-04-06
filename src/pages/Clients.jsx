@@ -1,15 +1,15 @@
-import HospitalTable from "../features/hospital/HospitalTable";
+import ClientsTable from "../features/Clients/ClientsTable";
 import { Container } from "../ui/Container";
 import Row from "../ui/Row";
 
-function Hospital() {
+function Clients() {
   return (
     <Container>
       <Row>
-        <HospitalTable />
+        <ClientsTable />
       </Row>
     </Container>
   );
 }
 
-export default Hospital;
+export default Clients;

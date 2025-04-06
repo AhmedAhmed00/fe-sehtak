@@ -3,7 +3,6 @@ import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
 import Row from "./Row";
 import ConfirmDelete from "./ConfirmDelete";
 import { createPortal } from "react-dom";
-import { useNavigate } from "react-router-dom";
 
 function Actions({ onView, onDelete, onUpdate }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,14 +16,14 @@ function Actions({ onView, onDelete, onUpdate }) {
         <FaEdit
           onClick={onUpdate}
           cursor="pointer"
-          fontSize="15px"
+          fontSize="16px"
           title="Edit"
         />
-        <FaEye onClick={onView} cursor="pointer" fontSize="15px" title="View" />
+        <FaEye onClick={onView} cursor="pointer" fontSize="16px" title="View" />
         <FaTrashAlt
           onClick={openModal}
           cursor="pointer"
-          fontSize="15px"
+          fontSize="16px"
           title="Delete"
         />
       </Row>

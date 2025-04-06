@@ -7,26 +7,58 @@ import {
   HiOutlineUsers,
   HiOutlineMap,
 } from "react-icons/hi";
-import { FaHospital, FaUserMd, FaCity } from "react-icons/fa";
 import {
-  MdScanner,
+  FaHospital,
+  FaUserMd,
+  FaCity,
+  FaCameraRetro,
+  FaFlask,
+  FaBone,
+  FaGlobeAmericas,
+  FaMoneyBillWave,
+  FaCreditCard,
+  FaClipboardList,
+  FaClock,
+  FaSearch,
+} from "react-icons/fa";
+import {
   MdCategory,
-  MdSubtitles,
-  MdBuild,
   MdOutlineAttachMoney,
   MdManageAccounts,
   MdOutlineCampaign,
+  MdFilterList,
+  MdSettings,
 } from "react-icons/md";
-import { BiTestTube } from "react-icons/bi";
 
 const groupedNavItems = [
   {
     title: "All Users",
     links: [
-      { title: "Hospital", path: "/hospital", icon: <FaHospital size={18} /> },
-      { title: "Doctor", path: "/doctor", icon: <FaUserMd size={18} /> },
-      { title: "Scanner", path: "/scanner", icon: <MdScanner size={18} /> },
-      { title: "Lab", path: "/lab", icon: <BiTestTube size={18} /> },
+      {
+        title: "Hospital",
+        path: "/all-users/hospital",
+        icon: <FaHospital />,
+      },
+      {
+        title: "Doctor",
+        path: "/all-users/doctor",
+        icon: <FaUserMd />,
+      },
+      {
+        title: "Scanner",
+        path: "/all-users/scanner",
+        icon: <FaCameraRetro />,
+      },
+      {
+        title: "Lab",
+        path: "/all-users/lab",
+        icon: <FaFlask />,
+      },
+      {
+        title: "Physical Therapy",
+        path: "/all-users/physical-therapy",
+        icon: <FaBone />,
+      },
     ],
   },
   {
@@ -34,44 +66,93 @@ const groupedNavItems = [
     links: [
       {
         title: "Specialization",
-        path: "/specialization",
-        icon: <MdCategory size={18} />,
+        path: "/specialization/specialization",
+        icon: <MdCategory />,
       },
       {
         title: "Sub Specialization",
-        path: "/sub-specialization",
-        icon: <MdSubtitles size={18} />,
+        path: "/specialization/sub-specialization",
+        icon: <MdFilterList />,
       },
     ],
   },
   {
     title: "Location",
     links: [
-      { title: "City", path: "/city", icon: <FaCity size={18} /> },
-      { title: "Region", path: "/region", icon: <HiOutlineMap size={18} /> },
+      {
+        title: "City",
+        path: "/location/city",
+        icon: <FaCity />,
+      },
+      {
+        title: "Region",
+        path: "/location/region",
+        icon: <FaGlobeAmericas />,
+      },
+    ],
+  },
+  {
+    title: "Finance",
+    links: [
+      {
+        title: "By Providers",
+        path: "/finance/by-providers",
+        icon: <FaMoneyBillWave />,
+      },
+      {
+        title: "By Orders",
+        path: "/finance/by-orders",
+        icon: <FaCreditCard />,
+      },
+    ],
+  },
+  {
+    title: "Orders",
+    links: [
+      {
+        title: "Orders",
+        path: "/orders/orders",
+        icon: <FaClipboardList />,
+      },
+      {
+        title: "Pending",
+        path: "/orders/pending",
+        icon: <FaClock />,
+      },
+    ],
+  },
+
+  {
+    title: "Services",
+    links: [
+      {
+        title: "Services admin",
+        path: "/services/services-admin",
+        icon: <MdSettings />,
+      },
+      {
+        title: "Lab Categories",
+        path: "/services/lab-categories",
+        icon: <FaFlask />,
+      },
+      {
+        title: "Scan Categories",
+        path: "/services/scan-categories",
+        icon: <FaSearch />,
+      },
     ],
   },
 ];
 
 const standAloneNavItems = [
-  {
-    title: "Orders",
-    path: "/orders",
-    icon: <HiOutlineShoppingCart size={18} />,
-  },
-  { title: "Clients", path: "/clients", icon: <HiOutlineUsers size={18} /> },
-  { title: "Services", path: "/services", icon: <MdBuild size={18} /> },
-  {
-    title: "Finance",
-    path: "/finance",
-    icon: <MdOutlineAttachMoney size={18} />,
-  },
+  { title: "Clients", path: "/clients", icon: <HiOutlineUsers /> },
+
   {
     title: "Management",
     path: "/mangment",
-    icon: <MdManageAccounts size={18} />,
+    icon: <MdManageAccounts />,
   },
-  { title: "Ads", path: "/ads", icon: <MdOutlineCampaign size={18} /> },
+  { title: "Ads", path: "/ads", icon: <MdOutlineCampaign /> },
 ];
 
 const AccordionItem = styled.div`
@@ -90,6 +171,7 @@ const AccordionTitle = styled.h3`
   align-items: center;
   justify-content: space-between;
   font-weight: 600;
+  font-size: 1.7rem;
 
   user-select: none;
   transition: color 0.2s ease;

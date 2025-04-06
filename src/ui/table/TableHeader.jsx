@@ -9,6 +9,7 @@ export const TableHeader = styled.header`
   text-transform: uppercase;
   letter-spacing: 0.4px;
   font-weight: 600;
+  background-color: var(--color-grey-200);
 
   color: var(--color-grey-600);
   padding: 1.6rem 3.6rem;

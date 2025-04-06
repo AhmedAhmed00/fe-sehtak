@@ -86,7 +86,7 @@ export default function Pagination({ resaultsCount, pageSize }) {
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
         >
-          <HiChevronRight />
+          <HiChevronLeft />
         </PaginationButton>
 
         {pageNumbers.map((page) => (
@@ -102,7 +102,7 @@ export default function Pagination({ resaultsCount, pageSize }) {
           disabled={currentPage === pageCount}
           onClick={() => handlePageChange(currentPage + 1)}
         >
-          <HiChevronLeft />
+          <HiChevronRight />
         </PaginationButton>
       </Buttons>
     </StyledPagination>

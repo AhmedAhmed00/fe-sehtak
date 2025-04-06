@@ -14,9 +14,9 @@ const OperationsContainer = styled.div`
 `;
 
 const ButtonsGroup = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   gap: 14px;
-  justify-content: flex-end;
 `;
 
 export default function TableOperations({ setOpenFilter, addPath }) {

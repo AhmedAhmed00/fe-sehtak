@@ -13,7 +13,8 @@ export const StyledNavLink = styled(NavLink)`
     color: var(--color-grey-600);
     font-size: 1.6rem;
     font-weight: 600;
-    padding: 1.2rem 1rem;
+    margin: 0.4rem 0;
+    padding: 1rem 1rem;
     transition: all 0.3s;
   }
 
@@ -27,8 +28,8 @@ export const StyledNavLink = styled(NavLink)`
   }
 
   & svg {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
     color: var(--color-grey-600);
     transition: all 0.3s;
   }

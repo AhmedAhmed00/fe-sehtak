@@ -17,7 +17,22 @@ import FullPageSpinner from "./ui/FullPageSpinner";
 import Unauthorized from "./features/authentication/Unauthorized";
 
 import Dash from "./features/dashboard/Dash";
-import Hospital from "./pages/Hospital";
+import Hospital from "./pages/all-users/Hospital";
+import Doctor from "./pages/all-users/Doctor";
+import Scanner from "./pages/all-users/Scanner";
+import Lab from "./pages/all-users/Lab";
+import PhysicalTherapy from "./pages/all-users/PhysicalTherapy";
+import Specialization from "./pages/specializations/specialization";
+import SubSpecialization from "./pages/specializations/SubSpecializatoin";
+import City from "./pages/locatoin/city";
+import Region from "./pages/locatoin/Region";
+import Orders from "./pages/orders/Orders";
+import Clients from "./pages/Clients";
+import FinanceByProviders from "./pages/finance/FinanceByProviders";
+import LabCategories from "./pages/services/LabCategories";
+import ServicesAdmin from "./pages/services/ServicesAdmin";
+import Pending from "./pages/orders/Pending";
+import ScanCategories from "./pages/services/ScanCategories";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,11 +62,65 @@ function App() {
                     <Route path="dashboard" element={<Dash />} />
 
                     {/* Hospital */}
-                    <Route path="/hospital" element={<Hospital />} />
+                    <Route path="/all-users/hospital" element={<Hospital />} />
+                    {/* Doctor */}
+                    <Route path="/all-users/doctor" element={<Doctor />} />
+                    {/* Scanner */}
+                    <Route path="/all-users/scanner" element={<Scanner />} />
+                    {/* Lab */}
+                    <Route path="/all-users/lab" element={<Lab />} />
+                    <Route
+                      path="/all-users/physical-therapy"
+                      element={<PhysicalTherapy />}
+                    />
+                    {/* specalization */}
+                    <Route
+                      path="/specialization/specialization"
+                      element={<Specialization />}
+                    />
+                    {/* sub  */}
+                    <Route
+                      path="/specialization/sub-specialization"
+                      element={<SubSpecialization />}
+                    />
+                    {/* city */}
+                    <Route path="/location/city" element={<City />} />
+
+                    {/* Region */}
+                    <Route path="/location/region" element={<Region />} />
+
+                    {/* orders */}
+                    <Route path="/orders/orders" element={<Orders />} />
+                    <Route path="/orders/pending" element={<Pending />} />
+                    {/* Clients */}
+                    <Route path="/clients" element={<Clients />} />
+
+                    {/* Services */}
+                    <Route
+                      path="/services/services-admin"
+                      element={<ServicesAdmin />}
+                    />
+                    <Route
+                      path="/services/lab-categories"
+                      element={<LabCategories />}
+                    />
+                    <Route
+                      path="/services/scan-categories"
+                      element={<ScanCategories />}
+                    />
+
+                    {/* FinanceByProviders */}
+                    <Route
+                      path="/finance/by-providers"
+                      element={<FinanceByProviders />}
+                    />
+                    {/* /finance/by-orders */}
+                    <Route
+                      path="/finance/by-orders"
+                      element={<FinanceByProviders />}
+                    />
 
                     <Route path="/unauthorized" element={<Unauthorized />} />
-                    <Route path="/invoices" element={<Unauthorized />} />
-                    <Route path="/documents" element={<Unauthorized />} />
                   </Route>
                 </Route>
 

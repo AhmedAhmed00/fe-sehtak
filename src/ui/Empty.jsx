@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Row from "./Row";
 
 const StyledEmpty = styled.div`
   min-height: 200px;
@@ -10,17 +11,26 @@ const StyledEmpty = styled.div`
 `;
 
 const StyledImg = styled.img.attrs({
-  src: "/Empty.jpg", 
-  alt: "Empty State", 
+  src: "/no-results.png",
+  alt: "Empty State",
 })`
-  width: 250px; 
+  width: 450px;
   height: auto;
 `;
 
-function Empty({ resource }) {
+function Empty() {
   return (
     <StyledEmpty>
-      <StyledImg />
+      <Row
+        height="500px"
+        items="center"
+        justify="center"
+        gap="15px"
+        type="vertical"
+      >
+        <StyledImg />
+        <p style={{ marginLeft: "20px" }}>There is no results right now</p>
+      </Row>
     </StyledEmpty>
   );
 }
