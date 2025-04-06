@@ -15,9 +15,9 @@ const StyledHeader = styled.header`
   ${"" /* box-shadow: 0px 2px 12px 0px #0000001a; */}
 `;
 
-const Avatar = styled.img`
-  width: 28px;
-  height: 28px;
+export const Avatar = styled.img`
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
 `;
 

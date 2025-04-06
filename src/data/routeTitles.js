@@ -17,6 +17,9 @@ const routeTitles = {
   "/clients": "Clients",
   "/finance/by-providers": "Finance > By Providers",
   "/finance/by-orders": "Finance > By Orders",
+  "/management/branches": "Management > Branches",
+  "/management/users": "Management > Users",
+  "/ads": "Ads",
 };
 
 export default routeTitles;

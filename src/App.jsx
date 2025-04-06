@@ -33,6 +33,8 @@ import LabCategories from "./pages/services/LabCategories";
 import ServicesAdmin from "./pages/services/ServicesAdmin";
 import Pending from "./pages/orders/Pending";
 import ScanCategories from "./pages/services/ScanCategories";
+import Mangement from "./pages/mangement/Mangement";
+import Ads from "./pages/Ads";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -119,6 +121,15 @@ function App() {
                       path="/finance/by-orders"
                       element={<FinanceByProviders />}
                     />
+                    {/* mangement  */}
+                    <Route path="/management" element={<Mangement />}>
+                      <Route path="branches" element={<div>branches</div>} />
+                      <Route path="users" element={<div>users</div>} />
+                    </Route>
+
+                    {/* ads */}
+
+                    <Route path="/ads" element={<Ads />} />
 
                     <Route path="/unauthorized" element={<Unauthorized />} />
                   </Route>

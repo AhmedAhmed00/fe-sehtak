@@ -20,6 +20,7 @@ import {
   FaClipboardList,
   FaClock,
   FaSearch,
+  FaUsers,
 } from "react-icons/fa";
 import {
   MdCategory,
@@ -28,6 +29,7 @@ import {
   MdOutlineCampaign,
   MdFilterList,
   MdSettings,
+  MdBusiness,
 } from "react-icons/md";
 
 const groupedNavItems = [
@@ -142,16 +144,27 @@ const groupedNavItems = [
       },
     ],
   },
+  {
+    title: "Management",
+    links: [
+      {
+        title: "Branches",
+        path: "/management/branches",
+        icon: <MdBusiness />,
+      },
+
+      {
+        title: "Users",
+        path: "/management/users",
+        icon: <FaUsers />,
+      },
+    ],
+  },
 ];
 
 const standAloneNavItems = [
   { title: "Clients", path: "/clients", icon: <HiOutlineUsers /> },
 
-  {
-    title: "Management",
-    path: "/mangment",
-    icon: <MdManageAccounts />,
-  },
   { title: "Ads", path: "/ads", icon: <MdOutlineCampaign /> },
 ];
 

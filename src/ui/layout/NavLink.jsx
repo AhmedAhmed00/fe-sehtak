@@ -9,12 +9,12 @@ export const StyledNavLink = styled(NavLink)`
   &:visited {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 0.9rem;
     color: var(--color-grey-600);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 0.4rem 0;
-    padding: 1rem 1rem;
+    padding: 0.8rem 0.8rem;
     transition: all 0.3s;
   }
 
