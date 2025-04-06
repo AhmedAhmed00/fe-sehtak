@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 `;
 
 export const SearchInputStyle = styled.input.attrs({
-  placeholder: "البحث",
+  placeholder: "Search ...",
 })`
   border-radius: 8px;
   border: 1px solid var(--color-grey-700);

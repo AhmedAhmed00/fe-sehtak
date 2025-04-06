@@ -1,8 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { Container } from "../../ui/Container";
 import Heading from "../../ui/Heading";
-import { Avatar } from "../../ui/layout/Header";
 import Row from "../../ui/Row";
+import { Avatar } from "../../ui/layout/Header";
 
 function Mangement() {
   const { pathname } = useLocation();

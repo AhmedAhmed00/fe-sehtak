@@ -43,7 +43,7 @@ export default function TableOperations({ setOpenFilter, addPath }) {
           size="large"
         >
           <Row gap="12px" type="horizontal">
-            <p>Add Hospital</p>
+            <p>Add </p>
             <IoAdd fontSize={22} fontWeight={500} />
           </Row>
         </Button>

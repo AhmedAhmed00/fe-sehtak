@@ -61,6 +61,16 @@ const groupedNavItems = [
         path: "/all-users/physical-therapy",
         icon: <FaBone />,
       },
+      {
+        title: "Providers",
+        path: "/all-users/providers",
+        icon: <HiOutlineUsers />,
+      },
+      {
+        title: "Pharmacy",
+        path: "/all-users/pharmacy",
+        icon: <HiOutlineUsers />,
+      },
     ],
   },
   {

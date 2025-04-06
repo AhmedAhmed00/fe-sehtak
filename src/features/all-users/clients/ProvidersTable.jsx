@@ -1,14 +1,15 @@
 import { useState } from "react";
-import GenericTable from "../../ui/table/GenericTable";
-import TableOperations from "../../ui/table/TableOperations";
-import Modal from "../../ui/table/Modal";
-import Row from "../../ui/Row";
-import ClientRow from "./ClientsRow";
 
-export const CLIENTS_HEADS = ["Name", "Phone", "Email", "Service", "Actions"];
+import ProviderRow from "./ProviderRow";
+import Row from "../../../ui/Row";
+import TableOperations from "../../../ui/table/TableOperations";
+import GenericTable from "../../../ui/table/GenericTable";
+import Modal from "../../../ui/table/Modal";
 
-export const renderClientRow = (client, index) => (
-  <ClientRow client={client} key={index} />
+export const Providers_HEADS = ["Name", "Phone", "Email", "Service", "Actions"];
+
+export const renderProviderRow = (provider, index) => (
+  <ProviderRow provider={provider} key={index} />
 );
 const rowsData = [
   {
@@ -27,7 +28,7 @@ const rowsData = [
   },
 ];
 
-function ClientsTable() {
+function ProvidersTable() {
   const [openFilter, setOpenFilter] = useState(false);
 
   return (
@@ -42,9 +43,9 @@ function ClientsTable() {
       </Row>
 
       <GenericTable
-        headers={CLIENTS_HEADS}
+        headers={Providers_HEADS}
         data={rowsData}
-        renderRow={renderClientRow}
+        renderRow={renderProviderRow}
         pageSize={20}
         resaultsCount={10}
         isLoading={false}
@@ -54,4 +55,4 @@ function ClientsTable() {
   );
 }
 
-export default ClientsTable;
+export default ProvidersTable;

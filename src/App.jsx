@@ -35,6 +35,8 @@ import Pending from "./pages/orders/Pending";
 import ScanCategories from "./pages/services/ScanCategories";
 import Mangement from "./pages/mangement/Mangement";
 import Ads from "./pages/Ads";
+import Providers from "./pages/all-users/Providers";
+import Pharmacy from "./pages/all-users/Pharmacy";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -75,6 +77,11 @@ function App() {
                       path="/all-users/physical-therapy"
                       element={<PhysicalTherapy />}
                     />
+                    <Route
+                      path="/all-users/providers"
+                      element={<Providers />}
+                    />
+                    <Route path="/all-users/pharmacy" element={<Pharmacy />} />
                     {/* specalization */}
                     <Route
                       path="/specialization/specialization"

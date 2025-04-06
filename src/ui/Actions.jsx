@@ -16,15 +16,23 @@ function Actions({ onView, onDelete, onUpdate }) {
         <FaEdit
           onClick={onUpdate}
           cursor="pointer"
-          fontSize="16px"
+          fontSize="18px"
           title="Edit"
+          color="var(--color-yellow-900)"
         />
-        <FaEye onClick={onView} cursor="pointer" fontSize="16px" title="View" />
+        <FaEye
+          color="var(--color-grey-500)"
+          onClick={onView}
+          cursor="pointer"
+          fontSize="18px"
+          title="View"
+        />
         <FaTrashAlt
           onClick={openModal}
           cursor="pointer"
-          fontSize="16px"
+          fontSize="18px"
           title="Delete"
+          color="var(--color-red-700)"
         />
       </Row>
 

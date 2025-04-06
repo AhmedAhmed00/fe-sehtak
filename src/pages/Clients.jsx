@@ -1,4 +1,4 @@
-import ClientsTable from "../features/Clients/ClientsTable";
+import ClientsTable from "../features/clients/ClientsTable";
 import { Container } from "../ui/Container";
 import Row from "../ui/Row";
 
