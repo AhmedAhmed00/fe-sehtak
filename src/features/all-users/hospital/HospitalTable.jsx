@@ -5,17 +5,6 @@ import GenericTable from "../../../ui/table/GenericTable";
 import HospitalRow from "./HospitalRow";
 import { useState } from "react";
 import Modal from "../../../ui/table/Modal";
-import Row from "../../../ui/Row";
-import FormRow from "../../../ui/FormRow";
-import Input from "../../../ui/Input";
-import Checkbox from "../../../ui/Checkbox";
-
-const Div = styled.div`
-  display: flex;
-  gap: 14px;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 export const HOSPITAL_HEADS = ["Name", "Email", "Phone", "Actions"];
 
@@ -35,13 +24,6 @@ function HospitalTable() {
 
   return (
     <>
-      <Div>
-        <TableOperations
-          setOpenFilter={setOpenFilter}
-          addPath={"/hearings/hearing-form"}
-        />
-      </Div>
-
       <GenericTable
         headers={HOSPITAL_HEADS}
         data={rowsData}

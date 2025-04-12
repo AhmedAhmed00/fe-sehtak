@@ -8,7 +8,7 @@ const SwitchContainer = styled.label`
   width: 100%;
   justify-content: space-between;
   gap: 10px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
 `;
 

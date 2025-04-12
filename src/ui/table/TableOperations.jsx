@@ -1,53 +1,136 @@
+import { CSVLink } from "react-csv";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Button";
-import SearchInput from "../SearchInput";
-import { IoAdd, IoFilter } from "react-icons/io5";
+import ExportButton from "../DropdownWrapper";
+import DropdownButton from "../DropdownWrapper";
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import { Overlay } from "../ConfirmDelete";
+import { CloseButton, ModalContent } from "../FilterModal";
+import { FaPlus, FaTimes } from "react-icons/fa";
 import Row from "../Row";
+import useExport from "../../hooks/useExport";
 
-const OperationsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 80% 19%;
-
-  width: 100%;
-  justify-content: space-between;
-`;
-
-const ButtonsGroup = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
+const Div = styled.div`
+  display: flex;
   gap: 14px;
+  align-items: center;
+  justify-content: center;
 `;
-
-export default function TableOperations({ setOpenFilter, addPath }) {
+export default function TableOperations({
+  setOpenFilter,
+  filterable = true,
+  addPath,
+  addTitle,
+}) {
   const navigate = useNavigate();
+  const [isOpenExport, setIsOpenExport] = useState(false);
+  const [startExport, setStartExport] = useState(false);
+  const { data } = useExport("/client/clients/export/", startExport);
 
   return (
-    <OperationsContainer>
-      <SearchInput />
+    <Div>
+      {/* <Button
+        onClick={() => {
+          setIsOpenExport((open) => !open);
+        }}
+        variation="primary"
+        size="medium"
+      >
+        إستيراد
+      </Button> */}
 
-      <ButtonsGroup>
+      {/* <DropdownButton
+        buttonLabel="تصدير"
+        options={[
+          {
+            label: "تصدير إلى Excel",
+            value: "Excel",
+            handleExport: () => {
+              setStartExport(true);
+            },
+          },
+          { label: "تصدير إلى PDF", value: "PDF" },
+        ]}
+        onSelect={(value) => console.log("Selected:", value)}
+        buttonProps={{ variation: "secondary", size: "medium" }}
+      /> */}
+      {filterable && (
         <Button
-          onClick={() => setOpenFilter((open) => !open)}
+          onClick={() => {
+            setOpenFilter((open) => !open);
+          }}
           variation="primary"
-          size="large"
         >
-          <Row gap="12px" type="horizontal">
-            <p>Filters</p>
-            <IoFilter fontSize={18} fontWeight={500} />
-          </Row>
+          تصفية
         </Button>
-        <Button
-          onClick={() => navigate(addPath)}
-          variation="primary"
-          size="large"
-        >
-          <Row gap="12px" type="horizontal">
-            <p>Add </p>
-            <IoAdd fontSize={22} fontWeight={500} />
-          </Row>
-        </Button>
-      </ButtonsGroup>
-    </OperationsContainer>
+      )}
+
+      <Button
+        size="large"
+        onClick={() => {
+          navigate(addPath);
+        }}
+        variation="primary"
+      >
+        {addTitle}
+      </Button>
+      {isOpenExport &&
+        createPortal(
+          <Overlay
+          //  isClosing={isClosing}
+          //  onClick={handleClose}
+          >
+            <ModalContent
+              onClick={(e) => e.stopPropagation()}
+              // isClosing={isClosing}
+            >
+              <CloseButton
+                onClick={() => {
+                  setIsOpenExport(false);
+                }}
+              >
+                <FaTimes />
+              </CloseButton>
+
+              <div style={{ width: "100%" }}>
+                <Row
+                  style={{
+                    alignItems: "center",
+                    width: "100%",
+                    marginTop: "20px",
+                  }}
+                >
+                  <Button style={{ width: "80%" }}>تحميل Tamplate</Button>
+                  <Button style={{ width: "80%" }}>تصدير البيانات</Button>
+                </Row>
+              </div>
+
+              <Row
+                style={{
+                  justifyContent: "center",
+                }}
+                margin="25px"
+                type="horizontal"
+                justify="start"
+                gap="15px"
+              >
+                <Button
+                  // onClick={handleClose}
+                  size="medium"
+                  variation="secondary"
+                >
+                  إلغاء
+                </Button>
+                <Button type="submit" size="medium" variation="primary">
+                  تصفية
+                </Button>
+              </Row>
+            </ModalContent>
+          </Overlay>,
+          document.body
+        )}
+    </Div>
   );
 }

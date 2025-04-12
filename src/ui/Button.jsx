@@ -10,18 +10,16 @@ const sizes = {
     text-align: center;
   `,
   medium: css`
-    font-size: 1.4rem;
-    min-width: 120px;
+    font-size: 1.5rem;
+    min-width: 130px;
     width: auto;
     padding: 0.8rem 1rem;
     font-weight: 500;
   `,
   large: css`
     font-size: 1.6rem;
-    height: 48px;
-    width: auto;
-    font-weight: 500;
-    padding: 0.8rem 2.4rem;
+    height: 42px;
+    width: 100%;
     font-weight: 500;
   `,
 };
@@ -58,8 +56,6 @@ const StyledButton = styled.button`
   border: none;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
-  margin-bottom: 10px;
-
   ${(props) => sizes[props.size]}
   ${(props) => variations[props.variation]}
 `;

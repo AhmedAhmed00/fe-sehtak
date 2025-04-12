@@ -3,7 +3,6 @@
 // // import * as jose from 'jose'
 
 import { format } from "date-fns";
-import { InvoiceStatuses, priorities, statuses } from "../data/selectData";
 import { ar } from "date-fns/locale";
 
 export function setServerErrors(error, setError) {
@@ -22,19 +21,19 @@ export function setServerErrors(error, setError) {
   }
 }
 
-export function getStatusPriority(status) {
-  const foundStatus = priorities.find((s) => s.name === status);
-  return foundStatus ? foundStatus.value : "";
-}
+// export function getStatusPriority(status) {
+//   const foundStatus = priorities.find((s) => s.name === status);
+//   return foundStatus ? foundStatus.value : "";
+// }
 
-export function getStatusName(status) {
-  const foundStatus = statuses.find((s) => s.name === status);
-  return foundStatus ? foundStatus.value : "";
-}
-export function getStatusInvoiceName(status) {
-  const foundStatus = InvoiceStatuses.find((s) => s.value === status);
-  return foundStatus ? foundStatus.name : "";
-}
+// export function getStatusName(status) {
+//   const foundStatus = statuses.find((s) => s.name === status);
+//   return foundStatus ? foundStatus.value : "";
+// }
+// export function getStatusInvoiceName(status) {
+//   const foundStatus = InvoiceStatuses.find((s) => s.value === status);
+//   return foundStatus ? foundStatus.name : "";
+// }
 
 export function checkError(errors, field) {
   return errors?.[field]?.message ?? null;

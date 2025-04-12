@@ -37,6 +37,7 @@ import Mangement from "./pages/mangement/Mangement";
 import Ads from "./pages/Ads";
 import Providers from "./pages/all-users/Providers";
 import Pharmacy from "./pages/all-users/Pharmacy";
+import HospitalForm from "./features/all-users/hospital/HospitalForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -67,6 +68,10 @@ function App() {
 
                     {/* Hospital */}
                     <Route path="/all-users/hospital" element={<Hospital />} />
+                    <Route
+                      path="/all-users/hospital/hospital-form"
+                      element={<HospitalForm />}
+                    />
                     {/* Doctor */}
                     <Route path="/all-users/doctor" element={<Doctor />} />
                     {/* Scanner */}

@@ -1,6 +1,7 @@
 const routeTitles = {
   "/dashboard": "الرئيسية",
   "/all-users/hospital": "All users > Hospital",
+  "/all-users/hospital/hospital-form": "All users > Hospital > Add Hospital",
   "/all-users/doctor": "All users > Doctor",
   "/all-users/scanner": "All users > Scanner",
   "/all-users/lab": "All users > Lab",
