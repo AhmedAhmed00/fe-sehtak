@@ -19,10 +19,12 @@ const Div = styled.div`
   justify-content: center;
 `;
 export default function TableOperations({
-  setOpenFilter,
+  setOpenModal,
   filterable = true,
   addPath,
   addTitle,
+  formType = "form",
+  setOpenForm,
 }) {
   const navigate = useNavigate();
   const [isOpenExport, setIsOpenExport] = useState(false);
@@ -56,21 +58,24 @@ export default function TableOperations({
         onSelect={(value) => console.log("Selected:", value)}
         buttonProps={{ variation: "secondary", size: "medium" }}
       /> */}
-      {filterable && (
+      {/* {filterable && (
         <Button
           onClick={() => {
-            setOpenFilter((open) => !open);
+            setOpenModal((open) => !open);
           }}
           variation="primary"
         >
           تصفية
         </Button>
-      )}
+      )} */}
 
       <Button
         size="large"
         onClick={() => {
-          navigate(addPath);
+          if (formType === "modal") setOpenModal((open) => !open);
+          else {
+            navigate(addPath);
+          }
         }}
         variation="primary"
       >

@@ -28,7 +28,7 @@ const rowsData = [
 ];
 
 function ClientsTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -38,7 +38,7 @@ function ClientsTable() {
         justify="space-between"
         align="center"
       >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
+        <TableOperations setOpenModal={setOpenModal} addPath={""} />
       </Row>
 
       <GenericTable
@@ -49,7 +49,7 @@ function ClientsTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
+      {openModal && <Modal onClose={() => setOpenModal(false)}></Modal>}
     </>
   );
 }

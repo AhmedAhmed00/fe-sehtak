@@ -5,13 +5,6 @@ import LabRow from "./LabRow";
 import { useState } from "react";
 import Modal from "../../../ui/table/Modal";
 
-const Div = styled.div`
-  display: flex;
-  gap: 14px;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 export const LAB_HEADS = ["Name", "Email", "Phone", "City", "Actions"];
 
 export const renderLabRow = (lab, index) => <LabRow lab={lab} key={index} />;
@@ -25,17 +18,10 @@ const rowsData = [
 ];
 
 function HospitalTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
-      <Div>
-        <TableOperations
-          setOpenFilter={setOpenFilter}
-          addPath={"/hearings/hearing-form"}
-        />
-      </Div>
-
       <GenericTable
         headers={LAB_HEADS}
         data={rowsData}
@@ -44,7 +30,6 @@ function HospitalTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
     </>
   );
 }

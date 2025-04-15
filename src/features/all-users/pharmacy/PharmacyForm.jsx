@@ -14,7 +14,7 @@ import { DevTool } from "@hookform/devtools";
 import ToggleSwitch from "../../../ui/ToogleSwitch";
 import { services } from "../../../data/selectData";
 
-function HospitalForm() {
+function PharmacyForm() {
   const { id, isEditingSession } = useDetectMode();
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ function HospitalForm() {
   const validate = useValidate(errors);
 
   const onSubmit = (values) => {
-    navigate("/all-users/hospital/branch-form/1");
+    navigate("/all-users/pharmacy/branch-form/1");
     console.log(values);
   };
 
@@ -119,4 +119,4 @@ function HospitalForm() {
   );
 }
 
-export default HospitalForm;
+export default PharmacyForm;

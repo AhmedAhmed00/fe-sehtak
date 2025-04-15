@@ -9,6 +9,7 @@ const StyledFileInput = styled.input.attrs({ type: "file", multiple: true })`
   height: 48px;
   font-size: 14px;
   border-radius: 8px;
+  width: 100%;
   border: 1px solid
     ${({ dangerBorder }) => (dangerBorder ? "red" : "var(--color-grey-300)")};
   background-color: #fff;
@@ -19,6 +20,7 @@ const StyledFileInput = styled.input.attrs({ type: "file", multiple: true })`
   &::file-selector-button {
     font: inherit;
     height: 100%;
+
     font-weight: 500;
     font-size: 14px;
     padding: 0.5rem 1rem;

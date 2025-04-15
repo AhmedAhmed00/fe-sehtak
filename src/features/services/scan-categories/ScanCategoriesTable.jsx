@@ -13,7 +13,7 @@ export const renderScanCategoryRow = (scanCategory, index) => (
 const rowsData = [];
 
 function ScanCategoriesTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -23,7 +23,7 @@ function ScanCategoriesTable() {
         justify="space-between"
         align="center"
       >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
+        <TableOperations setOpenModal={setOpenModal} addPath={""} />
       </Row>
 
       <GenericTable
@@ -34,7 +34,7 @@ function ScanCategoriesTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
+      {openModal && <Modal onClose={() => setOpenModal(false)}></Modal>}
     </>
   );
 }

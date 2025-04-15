@@ -50,7 +50,7 @@ const rowsData = [
 ];
 
 function FinanceByProvidersTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -59,9 +59,7 @@ function FinanceByProvidersTable() {
         gap={"14px"}
         justify="space-between"
         align="center"
-      >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
-      </Row>
+      ></Row>
 
       <GenericTable
         headers={FINANCE_BY_PROVIDERS_HEADS}
@@ -71,7 +69,6 @@ function FinanceByProvidersTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
     </>
   );
 }

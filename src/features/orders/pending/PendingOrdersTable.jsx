@@ -20,7 +20,7 @@ export const renderOrderRow = (order, index) => (
 const rowsData = [];
 
 function PendingOrdersTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -30,7 +30,7 @@ function PendingOrdersTable() {
         justify="space-between"
         align="center"
       >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
+        <TableOperations setOpenModal={setOpenModal} addPath={""} />
       </Row>
 
       <GenericTable
@@ -41,7 +41,7 @@ function PendingOrdersTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
+      {openModal && <Modal onClose={() => setOpenModal(false)}></Modal>}
     </>
   );
 }

@@ -29,19 +29,10 @@ const rowsData = [
 ];
 
 function ProvidersTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
-      <Row
-        type="horizontal"
-        gap={"14px"}
-        justify="space-between"
-        align="center"
-      >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
-      </Row>
-
       <GenericTable
         headers={Providers_HEADS}
         data={rowsData}
@@ -50,7 +41,6 @@ function ProvidersTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
     </>
   );
 }

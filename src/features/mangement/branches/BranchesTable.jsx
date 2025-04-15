@@ -17,7 +17,7 @@ const rowsData = [
 ];
 
 function BranchesTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -27,7 +27,7 @@ function BranchesTable() {
         justify="space-between"
         align="center"
       >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
+        <TableOperations setOpenModal={setOpenModal} addPath={""} />
       </Row>
 
       <GenericTable
@@ -38,7 +38,7 @@ function BranchesTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
+      {openModal && <Modal onClose={() => setOpenModal(false)}></Modal>}
     </>
   );
 }

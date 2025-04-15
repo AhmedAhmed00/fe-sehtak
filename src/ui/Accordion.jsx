@@ -63,7 +63,7 @@ const groupedNavItems = [
       },
       {
         title: "Providers",
-        path: "/all-users/providers",
+        path: "/all-users/provider",
         icon: <HiOutlineUsers />,
       },
       {

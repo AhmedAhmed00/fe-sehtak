@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import PharmacyRow from "./PharmacyRow";
-import ProviderRow from "../clients/ProviderRow";
+import ProviderRow from "../providers/ProviderRow";
 import Row from "../../../ui/Row";
 import TableOperations from "../../../ui/table/TableOperations";
 import GenericTable from "../../../ui/table/GenericTable";
@@ -31,19 +31,8 @@ const rowsData = [
 ];
 
 function PharmacyTable() {
-  const [openFilter, setOpenFilter] = useState(false);
-
   return (
     <>
-      <Row
-        type="horizontal"
-        gap={"14px"}
-        justify="space-between"
-        align="center"
-      >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
-      </Row>
-
       <GenericTable
         headers={PHARMACY_HEADS}
         data={rowsData}
@@ -52,7 +41,6 @@ function PharmacyTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
     </>
   );
 }

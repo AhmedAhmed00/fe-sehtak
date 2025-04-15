@@ -13,8 +13,10 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import ToggleSwitch from "../../../ui/ToogleSwitch";
 import { services } from "../../../data/selectData";
+import Select from "../../../ui/Select";
+import DoctorSchema from "../../../schemas/DoctorSchema";
 
-function HospitalForm() {
+function DoctorForm() {
   const { id, isEditingSession } = useDetectMode();
   const navigate = useNavigate();
 
@@ -27,13 +29,14 @@ function HospitalForm() {
     watch,
     setError,
   } = useForm({
+    // resolver: zodResolver(DoctorSchema),
     defaultValues: {},
   });
 
   const validate = useValidate(errors);
 
   const onSubmit = (values) => {
-    navigate("/all-users/hospital/branch-form/1");
+    navigate("/all-users/doctor/branch-form/1");
     console.log(values);
   };
 
@@ -54,8 +57,21 @@ function HospitalForm() {
           <FormRow error={validate("email")} label={"Email*"}>
             <Input {...register("email")} />
           </FormRow>
-          <FormRow error={validate("Password")} label={"password* "}>
+          <FormRow error={validate("password")} label={"Password* "}>
             <Input {...register("password")} />
+          </FormRow>
+        </InputsRow>
+        <InputsRow>
+          <FormRow error={validate("title")} label={"Title*"}>
+            <Select
+              register={register("title")}
+              items={[]}
+              chooseValue="id"
+              renderValue={"name"}
+            />
+          </FormRow>
+          <FormRow error={validate("bio")} label={"Bio*"}>
+            <Input {...register("bio")} />
           </FormRow>
         </InputsRow>
 
@@ -70,6 +86,17 @@ function HospitalForm() {
             <Input {...register("discount_percentage")} />
           </FormRow>
         </InputsRow>
+        <InputsRow>
+          <FormRow error={validate("specialization")} label={"Specialization"}>
+            <Select register={register("specialization")} items={[]} />
+          </FormRow>
+          <FormRow
+            error={validate("sub_specialization")}
+            label={"Sub Specialization"}
+          >
+            <Select register={register("sub_specialization")} items={[]} />
+          </FormRow>
+        </InputsRow>
 
         <InputsRow>
           <FormRow
@@ -78,7 +105,22 @@ function HospitalForm() {
           >
             <Input {...register("tax_registration")} />
           </FormRow>
-          <FormRow></FormRow>
+          <FormRow label={"Gender *"}>
+            <Row type="horizontal" justify="start" gap="20px">
+              <label>
+                <Row type="horizontal" justify="start" gap="8px">
+                  <p>Male</p>
+                  <input {...register("gender")} name="gender" type="radio" />
+                </Row>
+              </label>
+              <label>
+                <Row type="horizontal" justify="start" gap="8px">
+                  <p>Male</p>
+                  <input {...register("gender")} name="gender" type="radio" />
+                </Row>
+              </label>
+            </Row>
+          </FormRow>
         </InputsRow>
 
         <Row type="horizontal">
@@ -100,7 +142,7 @@ function HospitalForm() {
                 <ToggleSwitch
                   key={service.id}
                   control={control}
-                  name="custom_permissions"
+                  name="services"
                   permission={service}
                 />
               ))}
@@ -119,4 +161,4 @@ function HospitalForm() {
   );
 }
 
-export default HospitalForm;
+export default DoctorForm;

@@ -4,6 +4,7 @@ import FinanceByOrdersRow from "./FinanceByOrdersRow";
 import { useState } from "react";
 import Modal from "../../../ui/table/Modal";
 import Row from "../../../ui/Row";
+import { Avatar } from "../../../ui/layout/Header";
 
 export const FINANCE_BY_ORDERS_HEADS = [
   "Patient Name",
@@ -85,20 +86,10 @@ const rowsData = [
   },
 ];
 
-function FinanceByProvidersTable() {
-  const [openFilter, setOpenFilter] = useState(false);
-
+function FinanceByOrdersTable() {
   return (
     <>
-      <Row
-        type="horizontal"
-        gap={"14px"}
-        justify="space-between"
-        align="center"
-      >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
-      </Row>
-
+      <TotalIncome />
       <GenericTable
         headers={FINANCE_BY_ORDERS_HEADS}
         data={rowsData}
@@ -107,9 +98,44 @@ function FinanceByProvidersTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
     </>
   );
 }
 
-export default FinanceByProvidersTable;
+export default FinanceByOrdersTable;
+
+function TotalIncome() {
+  return (
+    <>
+      <Row
+        style={{
+          backgroundColor: "var(--color-grey-100)",
+          padding: "25px",
+          borderRadius: "10px",
+          border: "1px solid var(--color-grey-300)",
+        }}
+        type="horizontal"
+        justify="start"
+        gap="20px"
+      >
+        <Avatar src="/profile-placeholder.png" />
+        <Row gap="4px">
+          <h2
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            Total Income
+          </h2>
+          <p
+            style={{
+              fontSize: "15px",
+            }}
+          >
+            Offering a comprehensive range of medical services
+          </p>
+        </Row>
+      </Row>
+    </>
+  );
+}

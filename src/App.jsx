@@ -22,7 +22,6 @@ import Doctor from "./pages/all-users/Doctor";
 import Scanner from "./pages/all-users/Scanner";
 import Lab from "./pages/all-users/Lab";
 import PhysicalTherapy from "./pages/all-users/PhysicalTherapy";
-import Specialization from "./pages/specializations/specialization";
 import SubSpecialization from "./pages/specializations/SubSpecializatoin";
 import City from "./pages/locatoin/city";
 import Region from "./pages/locatoin/Region";
@@ -38,6 +37,16 @@ import Ads from "./pages/Ads";
 import Providers from "./pages/all-users/Providers";
 import Pharmacy from "./pages/all-users/Pharmacy";
 import HospitalForm from "./features/all-users/hospital/HospitalForm";
+import BranchForm from "./features/all-users/common/BranchForm";
+import ServiceForm from "./features/all-users/common/ServiceForm";
+import DoctorForm from "./features/all-users/doctor/DoctorForm";
+import ScannerForm from "./features/all-users/scanner/ScannerForm";
+import LabForm from "./features/all-users/lab/LabForm";
+import PhysicalTherapyForm from "./features/all-users/physical-therapy/PhysicalTherapyForm";
+import ProviderForm from "./features/all-users/providers/ProviderForm";
+import PharmacyForm from "./features/all-users/pharmacy/PharmacyForm";
+import Specialization from "./pages/specializations/specialization";
+import FinanceByOrders from "./pages/finance/FinancyByOrders";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -66,27 +75,63 @@ function App() {
                     />
                     <Route path="dashboard" element={<Dash />} />
 
+                    {/* service and branch */}
+                    <Route
+                      path="/all-users/:userType/branch-form/:userId"
+                      element={<BranchForm />}
+                    />
+                    <Route
+                      path="/all-users/:userType/service-form/:userId"
+                      element={<ServiceForm />}
+                    />
+
                     {/* Hospital */}
                     <Route path="/all-users/hospital" element={<Hospital />} />
+
                     <Route
                       path="/all-users/hospital/hospital-form"
                       element={<HospitalForm />}
                     />
+
                     {/* Doctor */}
                     <Route path="/all-users/doctor" element={<Doctor />} />
+                    <Route
+                      path="/all-users/doctor/doctor-form"
+                      element={<DoctorForm />}
+                    />
+
                     {/* Scanner */}
                     <Route path="/all-users/scanner" element={<Scanner />} />
+                    <Route
+                      path="/all-users/scanner/scanner-form"
+                      element={<ScannerForm />}
+                    />
+
                     {/* Lab */}
                     <Route path="/all-users/lab" element={<Lab />} />
+                    <Route
+                      path="/all-users/lab/lab-form"
+                      element={<LabForm />}
+                    />
+
                     <Route
                       path="/all-users/physical-therapy"
                       element={<PhysicalTherapy />}
                     />
                     <Route
-                      path="/all-users/providers"
-                      element={<Providers />}
+                      path="/all-users/physical-therapy/physical-therapy-form"
+                      element={<PhysicalTherapyForm />}
+                    />
+                    <Route path="/all-users/provider" element={<Providers />} />
+                    <Route
+                      path="/all-users/provider/provider-form"
+                      element={<ProviderForm />}
                     />
                     <Route path="/all-users/pharmacy" element={<Pharmacy />} />
+                    <Route
+                      path="/all-users/pharmacy/pharmacy-form"
+                      element={<PharmacyForm />}
+                    />
                     {/* specalization */}
                     <Route
                       path="/specialization/specialization"
@@ -131,7 +176,7 @@ function App() {
                     {/* /finance/by-orders */}
                     <Route
                       path="/finance/by-orders"
-                      element={<FinanceByProviders />}
+                      element={<FinanceByOrders />}
                     />
                     {/* mangement  */}
                     <Route path="/management" element={<Mangement />}>

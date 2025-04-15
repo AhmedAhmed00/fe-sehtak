@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function useFilterModal() {
-  const [openFilter, setOpenFilter] = useState(false);
+export default function useModal() {
+  const [openModal, setOpenModal] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   function onClose() {
-    setOpenFilter(false);
+    setOpenModal(false);
   }
 
   const handleClose = () => {
@@ -12,15 +12,15 @@ export default function useFilterModal() {
     setTimeout(() => {
       onClose();
       setIsClosing(false);
-    }, 300);
+    }, 200);
   };
 
   return {
     handleClose,
     isClosing,
     setIsClosing,
-    openFilter,
-    setOpenFilter,
+    openModal,
+    setOpenModal,
     onClose,
   };
 }

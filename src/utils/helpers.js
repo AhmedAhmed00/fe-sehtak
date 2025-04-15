@@ -83,3 +83,8 @@ export function prepareFormData(values) {
 
   return formData;
 }
+
+export function capitalize(text) {
+  if (!text) return text; // handle empty or undefined input
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+}

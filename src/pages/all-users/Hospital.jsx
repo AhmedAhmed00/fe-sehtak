@@ -5,7 +5,7 @@ import { OperationsContainer } from "../../ui/OperationsContainer";
 import Row from "../../ui/Row";
 import TableOperations from "../../ui/table/TableOperations";
 import useFilters from "../../hooks/useFilter";
-import useFilterModal from "../../hooks/useModal";
+import useModal from "../../hooks/useModal";
 import FilterModal from "../../ui/FilterModal";
 import Form from "../../ui/Form";
 import FilterButtons from "../../ui/FilterButtons";
@@ -13,8 +13,8 @@ import { createPortal } from "react-dom";
 import SearchInput from "../../ui/SearchInput";
 
 function Hospital() {
-  const { handleClose, isClosing, setIsClosing, openFilter, setOpenFilter } =
-    useFilterModal();
+  const { handleClose, isClosing, setIsClosing, openModal, setOpenModal } =
+    useModal();
   const { handleFilter } = useFilters();
   const { handleSubmit, register } = useForm();
   function onSubmit(values) {
@@ -27,7 +27,7 @@ function Hospital() {
         <SearchInput />
         <TableOperations
           filterable={false}
-          setOpenFilter={setOpenFilter}
+          setOpenModal={setOpenModal}
           addPath={"/all-users/hospital/hospital-form"}
           addTitle={"Add Hospital"}
         />
@@ -35,7 +35,7 @@ function Hospital() {
       <Row>
         <HospitalTable />
       </Row>
-      {openFilter &&
+      {openModal &&
         createPortal(
           <FilterModal
             handleFilter={handleFilter}

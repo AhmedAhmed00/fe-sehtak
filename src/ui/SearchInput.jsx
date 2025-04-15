@@ -8,12 +8,12 @@ const Wrapper = styled.div`
 `;
 
 export const SearchInputStyle = styled.input.attrs({
-  placeholder: "Search ...",
+  placeholder: "What are you looking for...?",
 })`
   border-radius: 8px;
   border: 1px solid var(--color-grey-700);
   outline: none;
-  padding: 4px 30px 4px 20px;
+  padding: 4px 30px 4px 38px;
   height: 42px;
   width: 100%;
   font-size: 14px;
@@ -21,10 +21,10 @@ export const SearchInputStyle = styled.input.attrs({
 
 const Icon = styled.span`
   position: absolute;
-  top: 40%;
-  right: 10px;
+  top: 56%;
+  left: 12px;
   transform: translateY(-50%);
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: var(--color-grey-700);
   pointer-events: none;
 `;

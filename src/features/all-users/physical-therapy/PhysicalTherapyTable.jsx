@@ -33,17 +33,8 @@ const rowsData = [
 ];
 
 function PhysicalTherapyTable() {
-  const [openFilter, setOpenFilter] = useState(false);
-
   return (
     <>
-      <Div>
-        <TableOperations
-          setOpenFilter={setOpenFilter}
-          addPath={"/hearings/hearing-form"}
-        />
-      </Div>
-
       <GenericTable
         headers={PHYSICAL_THERAPY_HEADS}
         data={rowsData}
@@ -52,7 +43,6 @@ function PhysicalTherapyTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
     </>
   );
 }

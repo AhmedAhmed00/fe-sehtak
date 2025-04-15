@@ -18,19 +18,10 @@ const rowsData = [
 ];
 
 function SpecializationTable() {
-  const [openFilter, setOpenFilter] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
-      <Row
-        type="horizontal"
-        gap={"14px"}
-        justify="space-between"
-        align="center"
-      >
-        <TableOperations setOpenFilter={setOpenFilter} addPath={""} />
-      </Row>
-
       <GenericTable
         headers={SPECIALIZATION_HEADS}
         data={rowsData}
@@ -39,7 +30,7 @@ function SpecializationTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && <Modal onClose={() => setOpenFilter(false)}></Modal>}
+      {openModal && <Modal onClose={() => setOpenModal(false)}></Modal>}
     </>
   );
 }

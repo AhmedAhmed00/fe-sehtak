@@ -6,6 +6,11 @@ import Modal from "../../../ui/table/Modal";
 import Row from "../../../ui/Row";
 
 import DoctorRow from "./DoctorRow";
+import { OperationsContainer } from "../../../ui/OperationsContainer";
+import SearchInput from "../../../ui/SearchInput";
+import useModal from "../../../hooks/useModal";
+import useFilters from "../../../hooks/useFilter";
+import { useForm } from "react-hook-form";
 
 const Div = styled.div`
   display: flex;
@@ -37,14 +42,25 @@ const rowsData = [
 ];
 
 function DoctorTable() {
-  const [openFilter, setOpenFilter] = useState(false);
-
+  const { handleClose, isClosing, setIsClosing, openModal, setOpenModal } =
+    useModal();
+  const { handleFilter } = useFilters();
+  const { handleSubmit, register } = useForm();
+  function onSubmit(values) {
+    handleClose(false);
+    handleFilter(values);
+  }
   return (
     <>
-      <Div>
-        <TableOperations setOpenFilter={setOpenFilter} addPath={"/"} />
-      </Div>
-
+      <OperationsContainer>
+        <SearchInput />
+        <TableOperations
+          filterable={false}
+          setOpenModal={setOpenModal}
+          addPath={"/all-users/doctor/doctor-form"}
+          addTitle={"Add Doctor"}
+        />
+      </OperationsContainer>
       <GenericTable
         headers={DOCTOR_HEADS}
         data={rowsData}
@@ -53,11 +69,6 @@ function DoctorTable() {
         resaultsCount={10}
         isLoading={false}
       />
-      {openFilter && (
-        <Modal onClose={() => setOpenFilter(false)}>
-          <Row oriantation="vertical"></Row>
-        </Modal>
-      )}
     </>
   );
 }
